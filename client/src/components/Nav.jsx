@@ -18,31 +18,42 @@ function Nav() {
           </Link>
         </div>
         <ul className="text-white flex justify-between gap-[3em] sm:flex hidden">
-          <Link to="/">
-            {" "}
-            <li className="text-[1.5em]">Home</li>
-          </Link>
-          <Link to="/contact">
+          
+          {/* <Link to="/contact">
             {" "}
             <li className="text-[1.5em]">Contacts</li>
-          </Link>
-          <Link to="/category">
+          </Link> */}
+          {/* <Link to="/category">
             {" "}
             <li className="text-[1.5em]">Categories</li>
-          </Link>
+          </Link> */}
         </ul>
         <div className="flex gap-[2em] sm:flex hidden">
+          <ul className="flex justify-between gap-[3em] sm:flex hidden">
+        <Link to="/">
+            {" "}
+            <li className="text-[1.5em] text-white">Home</li>
+          </Link>
+          <Link to="/dashboard">
+            {" "}
+            <li className="text-[1.5em] text-white">Dashboard</li>
+          </Link>
+          </ul>
           <Link to="/signup">
             {" "}
             <button className="text-[1.5em] text-white">Signup</button>
           </Link>
+          <Link to="/login">
+            {" "}
+            <button className="text-[1.5em] text-white">Login</button>
+          </Link>
 
-          <button
+          {/* <button
             // onClick={() => setOpen((prev) => ({ ...prev, login: true }))}
             className="text-[1.5em] text-white"
           >
             Login
-          </button>
+          </button> */}
         </div>
         <BsThreeDotsVertical className="text-[white] text-[2em] sm:hidden" />
       </div>

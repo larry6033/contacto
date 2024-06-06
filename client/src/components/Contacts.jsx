@@ -1,5 +1,5 @@
 import Contact from "./Contact";
-
+import { Link } from "react-router-dom";
 function Contacts() {
   return (
     <div className="bg-[#dfd3d3] p-[2em] mt-[3em]">
@@ -12,6 +12,40 @@ function Contacts() {
         </ul>
       </div>
       <div>
+        <Link to="/singlecontact">
+          <Contact />
+        </Link>
+        <Link to="/singlecontact">
+          <Contact />
+        </Link>
+        <Link to="/singlecontact">
+          <Contact />
+        </Link>
+        <Link to="/singlecontact">
+          <Contact />
+        </Link>
+        <Link to="/singlecontact">
+          <Contact />
+        </Link>
+        <Link to="/singlecontact">
+          <Contact />
+        </Link>
+        <Link to="/singlecontact">
+          <Contact />
+        </Link>
+        <var><Link to="/singlecontact">
+          <Contact />
+        </Link></var>
+        <Link to="/singlecontact">
+          <Contact />
+        </Link>
+        <Link to="/singlecontact">
+          <Contact />
+        </Link>
+        <Link to="/singlecontact">
+          <Contact />
+        </Link>
+        {/* <Contact />
         <Contact />
         <Contact />
         <Contact />
@@ -20,9 +54,7 @@ function Contacts() {
         <Contact />
         <Contact />
         <Contact />
-        <Contact />
-        <Contact />
-        <Contact />
+        <Contact /> */}
       </div>
     </div>
   );

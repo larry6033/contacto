@@ -13,5 +13,5 @@ path('profile/',views.ProfileView.as_view(), name='profile'),
 path('category/',views.CategoryView.as_view(), name='category'),
 path('register/',views.UserRegisterationView.as_view(), name='register'),
 path('login/',views.UserLoginView.as_view(), name='login'),
-
+path('contacts/<id>',views.SingleContactView.as_view(), name='single_contact'),
 ]

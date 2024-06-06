@@ -7,30 +7,30 @@ function Singlecontact() {
       className="w-[100px] rounded-full"
     />
     <ul>
-    <div className="flex justify-between m-[3em]">
+    <div className="flex justify-between m-[4em]">
       <li>First Name:</li>
       <div>
         {/* <p className="border-[green] border-b-2"></p> */}
         <h1>Larry</h1>
       </div>
     </div>
-    <div className="flex justify-between m-[3em]">
+    <div className="flex justify-between m-[4em]">
       <li>Last Name:</li>
       <div>
         {/* <p className="border-[green] border-b-2"></p> */}
-        <h1>Larry</h1>
+        <h1>paige</h1>
 
       </div>
     </div>
-    <div className="flex justify-between m-[3em]">
+    <div className="flex justify-between m-[4em]">
       <li>Email:</li>
       <div>
         {/* <p className="border-[green] border-b-2"></p> */}
-        <h1>Larrylarry@gmail.com</h1>
+        <h1>Larrypaige@gmail.com</h1>
 
       </div>
     </div>
-    <div className="flex justify-between m-[3em]">
+    <div className="flex justify-between m-[4em]">
       <li>Phone no:</li>
       <div>
         {/* <p className="border-[green] border-b-2"></p> */}
@@ -38,7 +38,7 @@ function Singlecontact() {
 
       </div>
     </div>
-    <div className="flex justify-between m-[3em]">
+    <div className="flex justify-between m-[4em]">
       <li>Home Address:</li>
       <div>
         {/* <p className="border-[green] border-b-2"></p> */}

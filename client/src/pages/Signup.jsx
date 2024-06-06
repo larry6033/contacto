@@ -1,78 +1,152 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-function Signup() {
-  // // const
-  // const navigate = useNavigate;
 
-  // function handlePopUp() {
-  //   navigate("/");
-  // }
-  return(
+function Signup() {
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const [formData, setFormData] = useState({
+    first_name: "",
+    last_name: "",
+    email: "",
+    password: "",
+  });
+  const navigate = useNavigate();
+
+  function handleSignup(e) {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+    // navigate("/login")
+  }
+  const getData = (e) => {
+    setErrorMessage("");
+    const { first_name, last_name, email, password } = formData;
+
+    if (!first_name || !last_name || !email || !password) {
+      setErrorMessage("Kindly fill all the fields");
+      return;
+    } else {
+      e.preventDefault();
+      console.log(formData);
+
+      const url = "http://127.0.0.1:8000/api/register/";
+      const options = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      };
+
+      fetch(url, options)
+        .then((res) => {
+          // console.log(res)
+          if (!res.ok) {
+            return res.json().then((tell) => {
+              setErrorMessage(tell["email"][0]);
+            });
+            // return res.json();
+          }
+        })
+        .then((data) => console.log(data))
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+  };
+
+  return (
     <div>
-    <div className="flex justify-center items-center h-[100vh]  flex-wrap">
-      <div className="border-[green] border-2 p-[3em] rounded-2xl">
-        <div className="flex flex-col justify-center items-center mt-[3em] text-[2em] text-[green] font-bold">
-          <h1>Signup now</h1>
+      <div className="flex justify-center items-center h-[100vh]  flex-wrap">
+        <div className="border-[green] border-2 p-[3em] rounded-2xl">
+          <div className="flex flex-col justify-center items-center mt-[3em] text-[2em] text-[green] font-bold">
+            <h1>Signup</h1>
+          </div>
+          <ul>
+            <div className="flex justify-between m-[3em]">
+              <li>First Name:</li>
+              <div>
+                {/* <p className="border-[green] border-b-2"></p> */}
+                <input
+                  name="first_name"
+                  onChange={handleSignup}
+                  type="text"
+                  className="border-[green] border-b-2"
+                />
+              </div>
+            </div>
+            <div className="flex justify-between m-[3em]">
+              <li>Last Name:</li>
+              <div>
+                {/* <p className="border-[green] border-b-2"></p> */}
+                <input
+                  name="last_name"
+                  onChange={handleSignup}
+                  type="text"
+                  className="border-[green] border-b-2"
+                />
+              </div>
+            </div>
+            <div className="flex justify-between m-[3em]">
+              <li>email:</li>
+              <div>
+                {/* <p className="border-[green] border-b-2"></p> */}
+                <input
+                  name="email"
+                  onChange={handleSignup}
+                  type="text"
+                  className="border-[green] border-b-2"
+                />
+              </div>
+            </div>
+
+            {/* <div className="flex justify-between m-[3em]"> */}
+            {/* <li>Phone number:</li> */}
+            {/* <div> */}
+            {/* <p className="border-[green] border-b-2"></p> */}
+            {/* <input  name="Phonenumber" onChange={handleSignup} type="text" className="border-[green] border-b-2" /> */}
+            {/* </div> */}
+            {/* </div> */}
+
+            <div className="flex justify-between m-[3em]">
+              <li>Password:</li>
+              <div>
+                {/* <p className="border-[green] border-b-2"></p> */}
+                <input
+                  name="password"
+                  onChange={handleSignup}
+                  type="text"
+                  className="border-[green] border-b-2"
+                />
+              </div>
+            </div>
+
+            {/* <div className="flex justify-between m-[3em]"> */}
+            {/* <li>Confirm Password:</li> */}
+            {/* <div> */}
+
+            {/* <p className="border-[green] border-b-2"></p> */}
+            {/* <input   name="confirm_password" onChange={handleSignup} type="text" className="border-[green] border-b-2" /> */}
+            {/* </div> */}
+            {/* </div> */}
+          </ul>
+          <div className="flex justify-center">
+            {" "}
+            <p className="text-red-600">{errorMessage}</p>
+          </div>
+          <div className="flex justify-center">
+            <button
+              className="text-[white] text-[1em] py-[1em] px-[3em] bg-[green] rounded-2xl "
+              onClick={getData}
+            >
+              Signup
+            </button>
+          </div>
+          <p className="font-semibold pt-[2em] text-center">
+            already have an account?
+            <span className="text-[green] cursor-pointer ">Login</span>
+          </p>
         </div>
-        <ul>
-          <div className="flex justify-between m-[3em]">
-            <li>First Name:</li>
-            <div>
-              {/* <p className="border-[green] border-b-2"></p> */}
-              <input type="text" className="border-[green] border-b-2" />
-            </div>
-          </div>
-          <div className="flex justify-between m-[3em]">
-            <li>Last Name:</li>
-            <div>
-              {/* <p className="border-[green] border-b-2"></p> */}
-              <input type="text" className="border-[green] border-b-2" />
-            </div>
-          </div>
-          <div className="flex justify-between m-[3em]">
-            <li>email:</li>
-            <div>
-              {/* <p className="border-[green] border-b-2"></p> */}
-              <input type="text" className="border-[green] border-b-2" />
-            </div>
-          </div>
-          <div className="flex justify-between m-[3em]">
-            <li>Phone number:</li>
-            <div>
-              {/* <p className="border-[green] border-b-2"></p> */}
-              <input type="text" className="border-[green] border-b-2" />
-            </div>
-          </div>
-          <div className="flex justify-between m-[3em]">
-            <li>Password:</li>
-            <div>
-              {/* <p className="border-[green] border-b-2"></p> */}
-              <input type="text" className="border-[green] border-b-2" />
-            </div>
-          </div>
-          <div className="flex justify-between m-[3em]">
-            <li>Confirm Password:</li>
-            <div>
-              {/* <p className="border-[green] border-b-2"></p> */}
-              <input type="text" className="border-[green] border-b-2" />
-            </div>
-          </div>
-        </ul>
-        <div className="flex justify-center">
-          <button
-            className="text-[white] text-[1em] py-[1em] px-[3em] bg-[green] rounded-2xl "
-            // onClick={handlePopUp}
-          >
-            Signup
-          </button>
-        </div>
-        <p className="font-semibold pt-[2em] text-center">
-          already have an account?
-          <span className="text-[green] cursor-pointer ">Login</span>
-        </p>
       </div>
     </div>
-  </div>
-  )
+  );
 }
 export default Signup;

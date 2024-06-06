@@ -56,4 +56,3 @@ class RegisterSerializer(serializers.ModelSerializer):
 class UserLoginSerializer(serializers.Serializer):
     email=serializers.EmailField()
     password=serializers.CharField(max_length=30)
-HTTP_401_UNAUTHORISED

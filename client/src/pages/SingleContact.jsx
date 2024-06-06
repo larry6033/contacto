@@ -6,8 +6,11 @@ function SingleContact() {
       <div className="flex flex-col w-[100%]  h-[80%] ">
         <Dashleft />
       </div>
-      <div className="ml-[20%]">
-;        <Singlecontact />
+      <div className="ml-[-80em] flex flex-col justify-center items-center h-[80vh]">
+        <div className="ml-[-150em] flex flex-col justify-center items-center h-[80vh]">
+          ;{" "}
+          <Singlecontact className="ml-[-80em] flex flex-col justify-center items-center h-[80vh]" />
+        </div>
       </div>
     </div>
   );
