@@ -8,12 +8,14 @@ import Dashboard from "../pages/Dashboard";
 import Contact from "../pages/Contact";
 import SingleContact from "../pages/SingleContact";
 import Addcontact from "../pages/Addcontact";
-import Categorycontacts from "./Categorycontacts";
+// import Categorycontacts from "./Categorycontacts";
+import AddCategory from "../pages/Addcategory";
+import Category from "../pages/Category";
 function Router() {
   return (
     <BrowserRouter>
       <Routes>
-        1
+        
         <Route
           path="/"
           element={
@@ -56,7 +58,8 @@ function Router() {
         />
                 <Route path="/singlecontact" element={<SingleContact />} />
                 <Route path="/addcontact" element={<Addcontact />} />
-                <Route path="/category" element={<Categorycontacts />} />
+                <Route path="/category" element={<Category />} />
+                <Route path="/addcategory" element={<AddCategory />} />
 
 
         <Route path="*" element={<Notfound />} />

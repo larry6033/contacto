@@ -22,11 +22,11 @@ function Signup() {
 
     if (!first_name || !last_name || !email || !password) {
       setErrorMessage("Kindly fill all the fields");
-      return;
+      return  
+      ;
     } else {
       e.preventDefault();
       console.log(formData);
-
       const url = "http://127.0.0.1:8000/api/register/";
       const options = {
         method: "POST",
@@ -34,6 +34,7 @@ function Signup() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
+
       };
 
       fetch(url, options)
@@ -42,16 +43,24 @@ function Signup() {
           if (!res.ok) {
             return res.json().then((tell) => {
               setErrorMessage(tell["email"][0]);
+              console.log(tell)
+
             });
             // return res.json();
+
           }
+          navigate('/login')
         })
         .then((data) => console.log(data))
         .catch((err) => {
           console.log(err);
         });
+        
+
     }
+
   };
+
 
   return (
     <div>

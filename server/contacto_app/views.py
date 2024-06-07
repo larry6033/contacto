@@ -160,17 +160,3 @@ class UserLoginView(APIView):
 
 
 
-
-# def signup(request):
-#     return HttpResponse("hello  if i owe you money this is not my number i forgot if you owe me money i'm coming for you!!! ")
-#     # return render(request,'signup.html')
-
-
-# def login(request):
-#     return HttpResponse("hello this is not my number ")
-#     # return render(request,'signup.html')
-     
-
-# def dashboard(request):
-#     return HttpResponse(" i'm comming for you!!! ")
-#     # return render(request,'signup.html')

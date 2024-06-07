@@ -3,9 +3,9 @@ import Dashleft from "../components/Dashleft";
 
 function Category() {
   return (
-    <div>
+    <div className="">
       <div >
-        <Dashleft />
+        {/* <Dashleft /> */}
       </div>
       <Categorycontacts />
     </div>

@@ -45,19 +45,23 @@ function Login() {
         body: JSON.stringify(formData),
       };
 
-      fetch(url, options)
-        .then((res) => {
-           // console.log(res)
+      fetch(url, options).then((res) => {
+           console.log(res)
         if(!res.ok){
           return res.json().then(tell=>{
-            setErrorMessage(tell["email"][0])
+            setErrorMessage(tell.message)
+console.log(tell)
           })
-        }})
+        }
+      else{
+        setErrorMessage("user does not exist")
+      }})
         .then((data) => console.log(data))
         .catch((err)=>{
           console.log(err)
     });
     }
+    // if email==!
 
   }
   // console.log(formData);
@@ -103,7 +107,6 @@ function Login() {
               onClick={getData}
               className="text-[white] text-[1em] py-[1em] px-[3em] bg-[green] rounded-2xl "
             >
-              
               Login
             </button>
           </div>
